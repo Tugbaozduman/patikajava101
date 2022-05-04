@@ -1,21 +1,38 @@
-package com.example.infreza;
 import java.util.Scanner;
- public class Not {
- public static void main (String args[]) {
- Scanner tarayici = new Scanner(System.in);
- String dersler [] = new String [3];
- int notlar [] = new int[3]; 
- for(int i=0; i<dersler.length; i++) {
- System.out.println("Ders Adını Giriniz");
- dersler[i] = tarayici.next();
- System.out.println((i+1)+". dersin notunu giriniz");
- notlar[i] = tarayici.nextInt();
- } 
- int toplam = 0;
- for (int k = 0; k<notlar.length;k++){
- System.out.println(dersler[k]+" : "+notlar [k]);
- toplam = toplam + notlar [k];
- }
- System.out.println("Ortalama : "+toplam/3);
- }
- }
+
+public class Avarage {
+    public static void main(String[] args) {
+
+        Scanner les=new Scanner(System.in);
+
+        //Math,Physic,Chemical,Turkish,Music,History average point
+
+        int Math,Physic,Chemical,Turkish,Music,History;
+
+        System.out.print("Math:");
+        Math=les.nextInt();
+
+        System.out.print("Physic:");
+        Physic=les.nextInt();
+
+        System.out.print("Chemical:");
+        Chemical=les.nextInt();
+
+        System.out.print("Turkish:");
+        Turkish=les.nextInt();
+
+        System.out.print("Music:");
+        Music=les.nextInt();
+
+        System.out.print("History:");
+        History=les.nextInt();
+
+        double Average;
+        Average=(Math+Physic+Chemical+Turkish+Music+History)/6;
+        System.out.println("Avarege: "+Average);
+
+        String Final=(Average>=50)? "Passed" : "Remain";
+        System.out.print("Final: "+Final);
+
+    }
+}
