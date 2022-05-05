@@ -1,0 +1,105 @@
+import java.util.Scanner;
+
+public class UcakBiletiFiaytiHesaplama {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+	
+		System.out.println("Pls enter your distance(km) : ");
+		int km = input.nextInt();
+	
+		System.out.println("Pls enter your age : ");
+		int age = input.nextInt();
+
+		
+		System.out.println("Pls enter your travel reqirements \n 1 : Tek Yön \n 2 : Gidids-Dönüs)");
+		int yolculukTipi = input.nextInt();
+	
+		 double toplamNormalFiyat;
+		
+		
+//		if (km > 0 && age > 0 && yolculukTipi == 1 || yolculukTipi == 2) {
+//			System.out.println("Your data is valid ");
+//
+//			toplamNormalFiyat = km * 0.10 ;
+//			System.out.println("Toplam Fiyat : " + toplamNormalFiyat);
+//		}else {
+//			System.out.println("Your value is wrong! Try again pls !!!");
+//		}
+		
+		double yeniFiyat;
+		
+	if(km > 0 && age > 0 && yolculukTipi == 1 || yolculukTipi == 2) {
+		System.out.println("Your data is valid ");
+		toplamNormalFiyat = km * 0.10 ;
+		System.out.println("Toplam Fiyat : " + toplamNormalFiyat);
+		
+		if (age < 12) {
+			if(yolculukTipi == 2) {
+				toplamNormalFiyat = km * 0.10 ;
+				double yasIndirimi = toplamNormalFiyat * 0.50;
+				System.out.println("yasIndirimi " + yasIndirimi);
+				double indirimliTutar = toplamNormalFiyat - yasIndirimi;
+				System.out.println("indirimliTutar " + indirimliTutar);
+				double gidisDönüsIndirimi = indirimliTutar * 0.20;
+				System.out.println("gidisDönüsIndirimi " + gidisDönüsIndirimi);
+				double toplamFiyat = (indirimliTutar - gidisDönüsIndirimi)* 2;
+				System.out.println("toplamFiyat " + toplamFiyat);
+				
+			}else {
+				toplamNormalFiyat = km * 0.10 ;
+				yeniFiyat = toplamNormalFiyat- (toplamNormalFiyat * 0.50);
+				System.out.println("Yeni Fiyat : " + yeniFiyat );	
+			}
+			
+		
+		}else if (age > 12 && age < 24) {
+			if(yolculukTipi == 2) {
+				toplamNormalFiyat = km * 0.10 ;
+				double yasIndirimi = toplamNormalFiyat * 0.10;
+				System.out.println("yasIndirimi " + yasIndirimi);
+				double indirimliTutar = toplamNormalFiyat - yasIndirimi;
+				System.out.println("indirimliTutar " + indirimliTutar);
+				double gidisDönüsIndirimi = indirimliTutar * 0.20;
+				System.out.println("gidisDönüsIndirimi " + gidisDönüsIndirimi);
+				double toplamFiyat = (indirimliTutar - gidisDönüsIndirimi)* 2;
+				System.out.println("toplamFiyat " + toplamFiyat);
+				
+			}else { 
+				yeniFiyat = (km * 0.10) - ((km * 0.10 ) * 0.10);
+				System.out.println("Yeni Fiyat : " + yeniFiyat);
+			}
+			
+			
+		
+		}else if(age > 65) {
+			if(yolculukTipi == 2) {
+				toplamNormalFiyat = km * 0.10 ;
+				double yasIndirimi = toplamNormalFiyat * 0.30;
+				System.out.println("yasIndirimi " + yasIndirimi);
+				double indirimliTutar = toplamNormalFiyat - yasIndirimi;
+				System.out.println("indirimliTutar " + indirimliTutar);
+				double gidisDönüsIndirimi = indirimliTutar * 0.20;
+				System.out.println("gidisDönüsIndirimi " + gidisDönüsIndirimi);
+				double toplamFiyat = (indirimliTutar - gidisDönüsIndirimi)* 2;
+				System.out.println("toplamFiyat " + toplamFiyat);
+				
+			}else {
+				yeniFiyat =  (km * 0.10) - ((km * 0.10 )* 0.30);
+				 System.out.println("Yeni Fiyat : " + yeniFiyat);
+			}
+			
+		
+		
+		}
+			
+		
+}else {
+	System.out.println("Your value is wrong! Try again pls !!!");
+}
+		
+		
+	}
+
+}
