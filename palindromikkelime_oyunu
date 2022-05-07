@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Spliterator;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Palindrom olup olmadigini kontrol icin kelime girin:");
+
+        String word= input.nextLine();
+
+        int wordLenght=word.length();
+
+
+        for (int x=0;x<wordLenght;x++)
+        {
+            if (word.codePointAt(x)==word.codePointAt(wordLenght-1-x))
+            {
+                System.out.println("kelime palindromdur");
+                break;
+            }else {
+                System.out.println("palindrom degildir.");
+                break;
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+}
